@@ -17,9 +17,23 @@ def contact():
 
 @app.route("/about")
 def about():
+    data = []
     with open("data/dwarves.json", "r", encoding="utf-8") as json_data:
-        dwarves_json_data = json.load(json_data)
-    return render_template("about.html", page_title="About", dwarves=dwarves_json_data)
+        data = json.load(json_data)
+    return render_template("about.html", page_title="About", dwarves=data)
+
+
+@app.route("/about/<dwarve_name>")
+def about_dwarf(dwarve_name):
+    with open("data/dwarves.json", "r", encoding="utf-8") as json_data:
+        data = json.load(json_data)
+        for member in data:
+            if member["url"] == dwarve_name:
+                # if url of member matches with a dwarve on the list, then 
+                # let declare dwarve and let it = to member
+                dwarve = member
+                return "<h1>" + dwarve["name"] + "</h1>"
+                # return render_template("about_dwarve.html", dwarve)
 
 
 @app.route("/careers")

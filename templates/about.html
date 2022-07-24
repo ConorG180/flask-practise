@@ -5,7 +5,7 @@
 {%if dwarves.index(dwarve) % 2 != 0%}
 <div class="row featurette">
     <div class="col-md-7">
-        <h3>{{dwarve.name}}</h3>
+        <h3><a href = "/about/{{ dwarve.url }}">{{dwarve.name}}</a></h3>
         <p>
             {{dwarve.description}}
         </p>
@@ -20,7 +20,7 @@
         <img src="{{dwarve.image_source}}" alt="">
     </div>
     <div class="col-md-7">
-        <h3>{{dwarve.name}}</h3>
+        <h3><a href = "/about/{{ dwarve.url }}">{{dwarve.name}}</a></h3>
         <p>
             {{dwarve.description}}
         </p>

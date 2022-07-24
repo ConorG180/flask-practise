@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+    <div class="col-md-5">
+        <img src = "{{ dwarve.image_source }}">
+    </div>
+    <h2 class = "col-md-7">
+        {{ dwarve.name }}
+    </h2>
+    <div class="col-md-12">
+        {{dwarve.description}}
+    </div>
+</div>
+{% endblock %}
